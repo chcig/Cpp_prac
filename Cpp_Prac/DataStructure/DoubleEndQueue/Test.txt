@@ -1,0 +1,33 @@
+#include <iostream>
+#include "DataStructure/DoubleEndQueue/eDeque.h"
+
+int main()
+{
+    eDeque<int> nQue;
+
+    nQue.AddLast(1);
+    nQue.AddLast(2);
+    nQue.AddLast(3);
+    nQue.AddLast(4);
+    nQue.AddLast(5);
+    nQue.AddLast(6);
+
+    int size = nQue.GetLength();
+    for (int i = 0; i < size; i++)
+        std::cout << nQue.RemoveFirst() << std::endl;
+
+    eDeque<char> cQue;
+
+    cQue.AddLast('c');
+    cQue.AddLast('d');
+    cQue.AddLast('e');
+    cQue.AddLast('f');
+    cQue.AddFirst('B');
+    cQue.AddFirst('A');
+    cQue.AddLast('G');
+
+    size = cQue.GetLength();
+    for (int i = 0; i < size; i++)
+        std::cout << cQue.RemoveLast() << std::endl;
+
+}

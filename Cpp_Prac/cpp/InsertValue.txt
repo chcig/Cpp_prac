@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+#pragma region PointerTest1
+//주소값 리터럴(R-Value)로 반환하는 경우
+int* getConstAddress(int x)
+{
+	int value = x * 2;
+	return &value;	
+}
+
+void PointerTest1()
+{
+	int* value_1 = getConstAddress(3);	//데이터가 사라진 곳의 주소를 반환 => 언제 데이터가 사라질지 모름
+	int value_2 = *getConstAddress(3); //데이터가 사라진 곳의 주소를 간접참조 => 넣어줄때 쓰레기가 들어갈 수 있음
+
+	cout << value_1 << endl;
+	cout << &value_2 << endl;
+}
+#pragma endregion
+
+#pragma region PointerTest2
+int& getRefInt(int x)
+{
+	int value = x * 2;
+	return value; // value가 참조하는 메모리를 복사 받음
+}
+
+void PointerTest2()
+{
+	//그냥 int 로 int & 참조 리턴을 대입 받는 경우
+	// int&, 즉 참조로 리턴하면 L - value로서 리턴을 하게 된다. - 그러나 getValue가 역할을 다하고 끝내면서 지역변수이자 참조 변수인 value가 참조하는 메모라 공간은 잠깐 있다 사라진다. 
+	// main의 value는 없어진 공간을 복사 받은 셈이 되는 것이다
+	// warning : reference to local variable ‘value’ returned[-Wreturn - local - add] 같은 경고메세지가 뜸.
+	int value_1 = getRefInt(3);
+	cout << value_1 << endl;
+
+	int& value_2 = getRefInt(3);
+	cout << value_2 << endl;
+	cout << value_2 << endl;	// 왜 두번째 호출에서는 쓰레기 값이 나오지???
+
+}
+#pragma endregion
+
+int main()
+{
+	PointerTest2();	
+}

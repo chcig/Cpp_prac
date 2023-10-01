@@ -1,0 +1,19 @@
+#include <iostream>
+#include "DataStructure/Queue/eQueue.h"
+
+int main()
+{
+    eQueue<int> q;
+
+    q.Enque(1);
+    q.Enque(2);
+    q.Enque(3);
+    q.Enque(4);
+    q.Enque(5);
+    q.Enque(6);
+
+    int size = q.Length;
+    for (int i = 0; i < size; i++)
+        std::cout << q.Deque() << std::endl;
+
+}
