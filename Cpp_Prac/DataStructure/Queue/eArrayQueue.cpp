@@ -5,7 +5,7 @@ eArrayQueue<T>::eArrayQueue(int cnt)
 {
 	m_nFront = 0;
 	m_nRear = 0;
-	m_nAssignCount = cnt;
+	m_nAssignCount = cnt + 1;  // Queue 특성상... Empty와 Full이 구분하기 위해서
 	m_Queue = new _node<T>* [m_nAssignCount];
 	for (int i = 0; i < m_nAssignCount; i++)
 		m_Queue[i] = new _node<T>;
@@ -34,8 +34,13 @@ void eArrayQueue<T>::Enque(T value)
 	if (IsFull()) 
 		return;
 
-	((_node<T>*)m_Queue[m_nRear])->value = value;
 	m_nRear = GetNext(m_nRear);
+	if (m_nRear == 0)		// 원형큐에서 덮어 쓸수 있도록...
+	{
+		m_nFront = 0;
+		m_nRear = GetNext(m_nRear);
+	}
+	((_node<T>*)m_Queue[m_nRear])->value = value;
 	return;
 }
 
@@ -45,9 +50,17 @@ T eArrayQueue<T>::Deque()
 	if (IsEmpty()) 
 		throw -1;
 
-	T ret = ((_node<T>*)m_Queue[m_nFront])->value;
 	m_nFront = GetNext(m_nFront);
+	T ret = ((_node<T>*)m_Queue[m_nFront])->value;
 	return ret;
+}
+
+template<typename T>
+T eArrayQueue<T>::Peek()
+{
+	if (IsEmpty())
+		throw - 1;
+	return ((_node<T>*)m_Queue[m_nFront])->value;
 }
 
 template <typename T>

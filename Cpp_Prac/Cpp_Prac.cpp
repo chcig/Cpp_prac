@@ -1,18 +1,22 @@
 ﻿#include <iostream>
-#include "DataStructure/Tree/eBinaryTree.h"
+#include <string>
+#include "DataStructure/Stack/Calculator/eCalculator.h"
 
 int main()
 {
-    eBinaryTree<int> nTree;
+    std::string strQ1 = "1+2*3";
+    std::string strQ2 = "(1+2)*3";
+    std::string strQ3 = "((1-2)+3)*(5-2)";
 
-    nTree.Add(4);
-    nTree.Add(3);
-    nTree.Add(7);
-    nTree.Add(34);
-    nTree.Add(544);
-    nTree.Add(1);
+    std::string ret;
+    eCalculator cal;
+    ret = cal.ConvertToReversePolishNotation(strQ1);
+    std::cout << strQ1 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ1) << std::endl;
 
-    nTree.printOrder(Order::PREORDER);
-    nTree.printOrder(Order::INORDER);
-    nTree.printOrder(Order::POSTORDER);
+    ret = cal.ConvertToReversePolishNotation(strQ2);
+    std::cout << strQ2 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ2) << std::endl;
+
+    ret = cal.ConvertToReversePolishNotation(strQ3);
+    std::cout << strQ3 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ3) << std::endl;
+
 }

@@ -30,7 +30,7 @@
     <ClCompile Include="DataStructure\Stack\eStack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DataStructure\Tree\eBinaryTree.cpp">
+    <ClCompile Include="DataStructure\Tree\BinaryTree\eBinaryTree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Format\Default\Standard.cpp">
@@ -45,7 +45,10 @@
     <ClCompile Include="DataStructure\DoubleEndQueue\eDeque.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Algorithm\Calculator\eCalculator.cpp">
+    <ClCompile Include="DataStructure\Stack\Calculator\eCalculator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\Tree\ExpressionTree\eExpressionTree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,7 +68,7 @@
     <ClInclude Include="DataStructure\Stack\eStack.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="DataStructure\Tree\eBinaryTree.h">
+    <ClInclude Include="DataStructure\Tree\BinaryTree\eBinaryTree.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Format\Default\Standard.h">
@@ -80,7 +83,10 @@
     <ClInclude Include="DataStructure\DoubleEndQueue\eDeque.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Algorithm\Calculator\eCalculator.h">
+    <ClInclude Include="DataStructure\Stack\Calculator\eCalculator.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\Tree\ExpressionTree\eExpressionTree.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,7 +98,7 @@
     <Text Include="cpp\InsertValue.txt" />
     <Text Include="DataStructure\Queue\TestArray.txt" />
     <Text Include="DataStructure\DoubleEndQueue\Test.txt" />
-    <Text Include="DataStructure\Tree\Test.txt" />
-    <Text Include="Algorithm\Calculator\Test.txt" />
+    <Text Include="DataStructure\Tree\BinaryTree\Test.txt" />
+    <Text Include="DataStructure\Stack\Calculator\Test.txt" />
   </ItemGroup>
 </Project>

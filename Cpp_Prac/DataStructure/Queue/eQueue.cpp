@@ -1,24 +1,38 @@
 #include "eQueue.h"
 
+
+template<typename T>
+eQueue<T>::eQueue()
+{
+	initQue();
+}
+
+template<typename T>
+eQueue<T>::~eQueue()
+{
+}
+
+template<typename T>
+void eQueue<T>::initQue()
+{
+	Front = nullptr;
+	Rear = nullptr;
+}
+
 template <typename T>
 void eQueue<T>::Enque(T t)
 {
 	_node<T>* newNode = new _node<T>(t);
 
-	if (Head == nullptr)
+	if (Front == nullptr)
 	{
-		Head = newNode;
+		Front = newNode;
+		Rear = newNode;
 	}
 	else
 	{
-		Tail = Head;
-		while (Tail != nullptr)
-		{
-			temp = Tail;
-			Tail = Tail->next;
-		}
-		Tail = newNode;
-		temp->next = Tail;
+		Rear->next = newNode;
+		Rear = newNode;
 	}
 	Length++;
 }
@@ -26,15 +40,24 @@ void eQueue<T>::Enque(T t)
 template <typename T>
 T eQueue<T>::Deque()
 {
-	if (Length < 0) return -1;
+	if (Length <= 0) return -1;
 
-	_node<T>* target = Head;
+	_node<T>* target = Front;
 	T res = target->value;
-	Head = Head->next;
+	Front = Front->next;
 	delete target;
 
 	Length--;
 	return res;
+}
+
+template<typename T>
+T eQueue<T>::Peek()
+{
+	if (Length <= 0) return -1;
+
+	T ret = Front->value;
+	return ret;
 }
 
 template class eQueue<int>;

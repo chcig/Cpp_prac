@@ -3,7 +3,7 @@
 
 int main()
 {
-    eArrayQueue<int> q;
+    eArrayQueue<int> q(6);
 
     q.Enque(1);
     q.Enque(2);
@@ -16,4 +16,16 @@ int main()
     for (int i = 0; i < size; i++)
         std::cout << q.Deque() << std::endl;
 
+    q.Enque(10);
+    q.Enque(20);
+    q.Enque(30);
+    q.Enque(40);
+    q.Enque(50);
+    q.Enque(60);
+    q.Enque(70);
+    q.Enque(80);
+
+    size = q.GetLength();
+    for (int i = 0; i < size; i++)
+        std::cout << q.Deque() << std::endl;
 }

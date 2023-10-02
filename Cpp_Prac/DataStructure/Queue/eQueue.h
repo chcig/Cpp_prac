@@ -5,14 +5,19 @@ template <typename T>
 class eQueue
 {
 protected:
-	_node<T>* Head;
-	_node<T>* Tail;
-	_node<T>* temp;
+	_node<T>* Front;
+	_node<T>* Rear;
 
+private:
+	eQueue();
+	~eQueue();
+
+	void initQue();
 public:
 	int Length = 0;
 
 	void Enque(T t);
 	T Deque();
+	T Peek();
 };
 

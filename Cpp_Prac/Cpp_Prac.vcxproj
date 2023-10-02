@@ -144,10 +144,11 @@
     <ClCompile Include="DataStructure\LinkedList\eLinkedList.cpp" />
     <ClCompile Include="DataStructure\Queue\eQueue.cpp" />
     <ClCompile Include="DataStructure\Stack\eStack.cpp" />
-    <ClCompile Include="DataStructure\Tree\eBinaryTree.cpp" />
+    <ClCompile Include="DataStructure\Tree\BinaryTree\eBinaryTree.cpp" />
     <ClCompile Include="DataStructure\Queue\eArrayQueue.cpp" />
     <ClCompile Include="DataStructure\DoubleEndQueue\eDeque.cpp" />
-    <ClCompile Include="Algorithm\Calculator\eCalculator.cpp" />
+    <ClCompile Include="DataStructure\Stack\Calculator\eCalculator.cpp" />
+    <ClCompile Include="DataStructure\Tree\ExpressionTree\eExpressionTree.cpp" />
     <ClCompile Include="Format\Default\Standard.cpp" />
     <ClCompile Include="Format\String\EString.cpp" />
   </ItemGroup>
@@ -157,22 +158,23 @@
     <ClInclude Include="DataStructure\LinkedList\eLinkedList.h" />
     <ClInclude Include="DataStructure\Queue\eQueue.h" />
     <ClInclude Include="DataStructure\Stack\eStack.h" />
-    <ClInclude Include="DataStructure\Tree\eBinaryTree.h" />
+    <ClInclude Include="DataStructure\Tree\BinaryTree\eBinaryTree.h" />
     <ClInclude Include="DataStructure\Queue\eArrayQueue.h" />
     <ClInclude Include="DataStructure\DoubleEndQueue\eDeque.h" />
-    <ClInclude Include="Algorithm\Calculator\eCalculator.h" />
+    <ClInclude Include="DataStructure\Stack\Calculator\eCalculator.h" />
+    <ClInclude Include="DataStructure\Tree\ExpressionTree\eExpressionTree.h" />
     <ClInclude Include="Format\Default\Standard.h" />
     <ClInclude Include="Format\String\EString.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Algorithm\Calculator\Test.txt" />
+    <Text Include="DataStructure\Stack\Calculator\Test.txt" />
     <Text Include="cpp\InsertValue.txt" />
     <Text Include="DataStructure\DoubleEndQueue\Test.txt" />
     <Text Include="DataStructure\LinkedList\Test.txt" />
     <Text Include="DataStructure\Queue\Test.txt" />
     <Text Include="DataStructure\Queue\TestArray.txt" />
     <Text Include="DataStructure\Stack\Test.txt" />
-    <Text Include="DataStructure\Tree\Test.txt" />
+    <Text Include="DataStructure\Tree\BinaryTree\Test.txt" />
     <Text Include="Win32\Thread_MultiObject\Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

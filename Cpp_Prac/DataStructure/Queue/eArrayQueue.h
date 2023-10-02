@@ -22,6 +22,7 @@ public:
 	void assign(int cnt);
 	void Enque(T value);
 	T Deque();
+	T Peek();
 
 	bool IsEmpty();
 	bool IsFull();
