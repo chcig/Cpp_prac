@@ -1,22 +1,34 @@
 ﻿#include <iostream>
-#include <string>
-#include "DataStructure/Stack/Calculator/eCalculator.h"
+#include "DataStructure/Tree/BinaryTree/eBinaryTree.h"
+#include "Algorithm/ExpresstionNotation.h"
 
 int main()
 {
-    std::string strQ1 = "1+2*3";
-    std::string strQ2 = "(1+2)*3";
-    std::string strQ3 = "((1-2)+3)*(5-2)";
+    eBinaryTree<int> nTree;
 
-    std::string ret;
-    eCalculator cal;
-    ret = cal.ConvertToReversePolishNotation(strQ1);
-    std::cout << strQ1 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ1) << std::endl;
+    nTree.Add(4);
+    nTree.Add(3);
+    nTree.Add(7);
+    nTree.Add(34);
+    nTree.Add(544);
+    nTree.Add(1);
 
-    ret = cal.ConvertToReversePolishNotation(strQ2);
-    std::cout << strQ2 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ2) << std::endl;
+    nTree.printOrder(Order::PREORDER);
+    nTree.printOrder(Order::INORDER);
+    nTree.printOrder(Order::POSTORDER);
 
-    ret = cal.ConvertToReversePolishNotation(strQ3);
-    std::cout << strQ3 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ3) << std::endl;
 
+    std::string strQ = "((1-2)+3)*(5-2)";
+
+    std::string strConv = ConvertToReversePolishNotation(strQ);
+    nTree.MakeExpresstionTree(strConv);
+
+    std::cout << strQ << " 전위표기법 변환 -> "; 
+    nTree.ShowExpresstionOrder(Order::PREORDER);
+
+    std::cout << strQ << " 중위표기법 변환 -> ";
+    nTree.ShowExpresstionOrder(Order::INORDER);
+
+    std::cout << strQ << " 후위표기법 변환 -> ";
+    nTree.ShowExpresstionOrder(Order::POSTORDER);
 }

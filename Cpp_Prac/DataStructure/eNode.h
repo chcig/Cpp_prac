@@ -9,8 +9,8 @@ template <typename T>
 struct _node
 {
 	T value;
-	_node* pre;
-	_node* next;
+	_node<T>* pre;
+	_node<T>* next;
 
 	_node() {};
 	_node(T t)
@@ -25,13 +25,28 @@ template <typename T>
 struct _treeNode
 {
 	T value;
-	_treeNode* left;
-	_treeNode* right;
+	_treeNode<T>* left;
+	_treeNode<T>* right;
 
 	int level;
 	bool isFull;
 
-	_treeNode() {};
+	_treeNode()
+	{
+		left = nullptr;
+		right = nullptr;
+	};
+
+	_treeNode(_treeNode<T>* pt)
+	{
+		value = pt->value;
+		left = nullptr;
+		right = nullptr;
+
+		level = 0;
+		isFull = false;
+	}
+
 	_treeNode(T t)
 	{
 		value = t;

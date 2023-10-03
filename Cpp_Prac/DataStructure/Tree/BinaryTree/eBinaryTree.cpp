@@ -1,4 +1,5 @@
 #include "eBinaryTree.h"
+#include "../../Stack/eStack.h"
 
 template <typename T>
 void eBinaryTree<T>::Add(T value)
@@ -11,6 +12,9 @@ void eBinaryTree<T>::Clear()
 {
 	Clear(root);
 	root = nullptr;
+
+	Clear(rootTree);
+	rootTree = nullptr;
 }
 
 template <typename T>
@@ -38,12 +42,8 @@ _treeNode<T>* eBinaryTree<T>::add(_treeNode<T>* curNode, T t)
 	level++;
 
 	if (curNode == nullptr)
-	{
-		_treeNode<T>* newNode = new _treeNode<T>(t);
-		newNode->level = level;
-		level = 0;
-		return newNode;
-	}
+		return MakeBTree(t);
+
 	if (curNode->value > t)
 		curNode->left = add(curNode->left, t);
 	if (t > curNode->value)
@@ -101,6 +101,58 @@ template <typename T>
 void eBinaryTree<T>::SimpleShowData(T value)
 {
 	std::cout << value << " ";
+}
+
+template<typename T>
+void eBinaryTree<T>::MakeExpresstionTree(std::string strExpresstion)
+{
+	eStack<T> stack;
+	_treeNode<T>* pNode = nullptr;
+
+	for (int i = 0; i < strExpresstion.size(); i++)
+	{
+		pNode = MakeBTree();
+
+		if (isdigit(strExpresstion[i]))
+			pNode->value = ((T)strExpresstion[i])-'0';
+		else
+		{
+			pNode->right = stack.treePop();
+			pNode->left = stack.treePop();
+			pNode->value = strExpresstion[i];
+		}
+
+		stack.treePush(pNode);
+	}
+	rootTree = stack.treePop();
+}
+
+template <typename T>
+void eBinaryTree<T>::ShowExpresstionOrder(Order order)
+{
+	switch (order)
+	{
+	case Order::PREORDER:
+		PreOrderTraverse(rootTree, std::bind(&eBinaryTree<T>::SimpleShowNodeData, this, std::placeholders::_1));
+		break;
+	case Order::INORDER:
+		InOrderTraverse(rootTree, std::bind(&eBinaryTree<T>::SimpleShowNodeData, this, std::placeholders::_1));
+		break;
+	case Order::POSTORDER:
+		PostOrderTraverse(rootTree, std::bind(&eBinaryTree<T>::SimpleShowNodeData, this, std::placeholders::_1));
+		break;
+	}
+	std::cout << std::endl;
+}
+
+template <typename T>
+void eBinaryTree<T>::SimpleShowNodeData(T value)
+{
+	if(0 <= value && value <= 9)
+		std::cout << value;
+	else
+		std::cout << (char)value;
+
 }
 
 template class eBinaryTree<char>;

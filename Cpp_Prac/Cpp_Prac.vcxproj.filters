@@ -48,9 +48,6 @@
     <ClCompile Include="DataStructure\Stack\Calculator\eCalculator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DataStructure\Tree\ExpressionTree\eExpressionTree.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DataStructure\Map\eMap.h">
@@ -86,7 +83,7 @@
     <ClInclude Include="DataStructure\Stack\Calculator\eCalculator.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="DataStructure\Tree\ExpressionTree\eExpressionTree.h">
+    <ClInclude Include="Algorithm\ExpresstionNotation.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

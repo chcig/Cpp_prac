@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "Algorithm/Calculator/eCalculator.h"
+#include "Algorithm/ExpresstionNotation.h"
+#include "DataStructure/Stack/Calculator/eCalculator.h"
 
 int main()
 {
@@ -10,13 +11,13 @@ int main()
 
     std::string ret;
     eCalculator cal;
-    ret = cal.ConvertToReversePolishNotation(strQ1);
+    ret = ConvertToReversePolishNotation(strQ1);
     std::cout << strQ1 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ1) << std::endl;
-    
-    ret = cal.ConvertToReversePolishNotation(strQ2);
+
+    ret = ConvertToReversePolishNotation(strQ2);
     std::cout << strQ2 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ2) << std::endl;
 
-    ret = cal.ConvertToReversePolishNotation(strQ3);
+    ret = ConvertToReversePolishNotation(strQ3);
     std::cout << strQ3 << " 후위표기법 변환 -> " << ret << " = " << cal.CalcReversePolishNotation(strQ3) << std::endl;
 
 }

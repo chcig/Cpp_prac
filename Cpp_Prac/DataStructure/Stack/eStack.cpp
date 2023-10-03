@@ -49,6 +49,30 @@ T eStack<T>::peek()
 	return res;
 }
 
+// 특수한 경우: _treeNode<T> 포인터를 push
+template <typename T>
+void eStack<T>::treePush(_treeNode<T>* treeNodePtr)
+{
+	_node<_treeNode<T>*>* newNode = new _node<_treeNode<T>*>(treeNodePtr);
+	newNode->next = TreeHead;
+	TreeHead = newNode;
+	treeLength++;
+}
+
+template<typename T>
+_treeNode<T>* eStack<T>::treePop()
+{
+	if (treeLength == 0) return nullptr;
+
+	_node<_treeNode<T>*>* ret = TreeHead;
+	TreeHead = TreeHead->next;
+
+	_treeNode<T>* res = ret->value;
+	delete ret;
+	treeLength--;
+	return res;
+}
+
 template class eStack<int>;
 template class eStack<double>;
 template class eStack<float>;

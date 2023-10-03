@@ -148,7 +148,6 @@
     <ClCompile Include="DataStructure\Queue\eArrayQueue.cpp" />
     <ClCompile Include="DataStructure\DoubleEndQueue\eDeque.cpp" />
     <ClCompile Include="DataStructure\Stack\Calculator\eCalculator.cpp" />
-    <ClCompile Include="DataStructure\Tree\ExpressionTree\eExpressionTree.cpp" />
     <ClCompile Include="Format\Default\Standard.cpp" />
     <ClCompile Include="Format\String\EString.cpp" />
   </ItemGroup>
@@ -162,7 +161,7 @@
     <ClInclude Include="DataStructure\Queue\eArrayQueue.h" />
     <ClInclude Include="DataStructure\DoubleEndQueue\eDeque.h" />
     <ClInclude Include="DataStructure\Stack\Calculator\eCalculator.h" />
-    <ClInclude Include="DataStructure\Tree\ExpressionTree\eExpressionTree.h" />
+    <ClInclude Include="Algorithm\ExpresstionNotation.h" />
     <ClInclude Include="Format\Default\Standard.h" />
     <ClInclude Include="Format\String\EString.h" />
   </ItemGroup>
