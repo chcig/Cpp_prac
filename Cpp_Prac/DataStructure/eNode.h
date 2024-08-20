@@ -57,3 +57,16 @@ struct _treeNode
 		isFull = false;
 	}
 };
+
+typedef int Priority;
+template <typename T>
+struct _heapElement
+{
+	Priority pr;
+	T value;
+	_heapElement()
+	{
+		pr = 0;
+		value = T();
+	}
+};

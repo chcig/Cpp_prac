@@ -1,5 +1,6 @@
 #include "eBinaryTree.h"
 #include "../../Stack/eStack.h"
+#include"../../../Algorithm/ExpresstionNotation.h"
 
 template <typename T>
 void eBinaryTree<T>::Add(T value)
@@ -103,6 +104,7 @@ void eBinaryTree<T>::SimpleShowData(T value)
 	std::cout << value << " ";
 }
 
+// Expresstion Calculator
 template<typename T>
 void eBinaryTree<T>::MakeExpresstionTree(std::string strExpresstion)
 {
@@ -152,7 +154,48 @@ void eBinaryTree<T>::SimpleShowNodeData(T value)
 		std::cout << value;
 	else
 		std::cout << (char)value;
+}
 
+template <typename T>
+T eBinaryTree<T>::CalcExpresstion()
+{
+	if (rootTree->left == nullptr && rootTree->right == nullptr)
+		return rootTree->value;
+
+	T op1, op2;
+	op1 = CalcExpresstion(rootTree->left);
+	op2 = CalcExpresstion(rootTree->right);
+
+	switch ((char)rootTree->value)
+	{
+	case MUL_CHAR: return op1 * op2;
+	case DIV_CHAR: return op1 / op2;
+	case ADD_CHAR: return op1 + op2;
+	case SUB_CHAR: return op1 - op2;
+	}
+
+	return rootTree->value;
+}
+
+template<typename T>
+T eBinaryTree<T>::CalcExpresstion(_treeNode<T>* curNode)
+{
+	if (curNode->left == nullptr && curNode->right == nullptr)
+		return curNode->value;
+
+	T op1, op2;
+	op1 = CalcExpresstion(curNode->left);
+	op2 = CalcExpresstion(curNode->right);
+
+	switch ((char)curNode->value)
+	{
+	case MUL_CHAR: return op1 * op2;
+	case DIV_CHAR: return op1 / op2;
+	case ADD_CHAR: return op1 + op2;
+	case SUB_CHAR: return op1 - op2;
+	}
+
+	return curNode->value;
 }
 
 template class eBinaryTree<char>;

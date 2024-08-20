@@ -4,6 +4,18 @@
 #include <iostream>
 #include <string>
 
+/// Full Binary Tree	 : All Level Tree Is Full
+///       ¡Ü
+///    ¡Ü     ¡Ü
+///  ¡Ü  ¡Ü   ¡Ü  ¡Ü
+/// ¡Ü¡Ü  ¡Ü¡Ü ¡Ü¡Ü  ¡Ü¡Ü
+
+/// Complete Binary Tree : Stack Tree No Empty (Like Array)
+///       ¡Ü
+///    ¡Ü     ¡Ü
+///  ¡Ü  ¡Ü   ¡Ü  ¡Ü
+/// ¡Ü¡Ü  ¡Ü¡Ü
+
 enum class Order
 {
 	PREORDER,
@@ -39,7 +51,6 @@ private:
 /// <summary>
 /// Expresstion Tree
 /// </summary>
-/// <typeparam name="T"></typeparam>
 protected:
 	_treeNode<T>* rootTree;
 
@@ -47,10 +58,11 @@ public:
 	_treeNode<T>* MakeBTree() { return new _treeNode<T>; };
 	_treeNode<T>* MakeBTree(_treeNode<T>* t) { return new _treeNode<T>(t); };
 	void MakeExpresstionTree(std::string strExpresstion);
-
 	void ShowExpresstionOrder(Order order);
-
 	void SimpleShowNodeData(T value);
+
+	T CalcExpresstion();
+	T CalcExpresstion(_treeNode<T>* curNode);
 
 
 private:

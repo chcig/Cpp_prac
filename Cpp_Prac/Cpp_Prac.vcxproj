@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -148,10 +148,13 @@
     <ClCompile Include="DataStructure\Queue\eArrayQueue.cpp" />
     <ClCompile Include="DataStructure\DoubleEndQueue\eDeque.cpp" />
     <ClCompile Include="DataStructure\Stack\Calculator\eCalculator.cpp" />
+    <ClCompile Include="DataStructure\PriorityQueue\ePriortyQueue.cpp" />
+    <ClCompile Include="DataStructure\Heap\eHeap.cpp" />
     <ClCompile Include="Format\Default\Standard.cpp" />
     <ClCompile Include="Format\String\EString.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm\Baekjoon.h" />
     <ClInclude Include="DataStructure\eNode.h" />
     <ClInclude Include="DataStructure\Map\eMap.h" />
     <ClInclude Include="DataStructure\LinkedList\eLinkedList.h" />
@@ -162,8 +165,11 @@
     <ClInclude Include="DataStructure\DoubleEndQueue\eDeque.h" />
     <ClInclude Include="DataStructure\Stack\Calculator\eCalculator.h" />
     <ClInclude Include="Algorithm\ExpresstionNotation.h" />
+    <ClInclude Include="DataStructure\PriorityQueue\ePriortyQueue.h" />
+    <ClInclude Include="DataStructure\Heap\eHeap.h" />
     <ClInclude Include="Format\Default\Standard.h" />
     <ClInclude Include="Format\String\EString.h" />
+    <ClInclude Include="Algorithm\Sort.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DataStructure\Stack\Calculator\Test.txt" />
